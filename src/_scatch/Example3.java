@@ -8,9 +8,6 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import _scatch.Example1.CountTask;
 
 
 public class Example3
@@ -59,7 +56,7 @@ public class Example3
     System.out.println("Start counting");
     long startTime = System.currentTimeMillis();
     
-    int numOfWorkers = Math.max(1, numOfProc-1 );
+    int numOfWorkers = Math.max(1, 4*numOfProc );
     ExecutorService executor = Executors.newFixedThreadPool( numOfWorkers );
     
     int chunkSize = LEN/numOfWorkers;
